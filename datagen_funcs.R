@@ -3,7 +3,7 @@
 library(tidyverse)
 
 price <- function(current_price = 336){
-  new_price <- current_price + rcauchy(n = 1, scale = 100, location = 336)
+  new_price <- current_price + rcauchy(n = 1, scale = 100, location = 0)
   
   if(new_price < 0){
     new_price <- 17
@@ -17,8 +17,20 @@ worker_happiness <- function(wages, infra){
   
   if(wages <= 0){
     happiness <- 0
+  } else {
+    happiness <- tanh(wages/50 + log(infra)/50)
   }
-  happiness <- tanh(2*wages/100 + log(infra)/50)
-  
   return(happiness)
 }
+
+
+
+yield <- function(n_workers, tech){
+  quantity <- log(n_workers^2) * log(tech^2) + rnorm(n = 1, mean = 0, sd = 15)
+  return(quantity)
+}
+
+
+
+
+
