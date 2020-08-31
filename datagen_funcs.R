@@ -31,6 +31,9 @@ yield <- function(n_workers, tech){
 }
 
 
-
-
+demand <- function(pers_price, price){
+  price_diff <- price - pers_price
+  demanded_quant <- price_diff^(3/5) + 350
+  return(demanded_quant)
+  }
 
