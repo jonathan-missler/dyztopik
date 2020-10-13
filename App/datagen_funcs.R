@@ -32,7 +32,7 @@ yield <- function(n_workers, tech){
 demand <- function(pers_price, price){
   price_diff <- price - pers_price
   
-  demanded_quant <- 50*tanh(0.05*price_diff)+350  
+  demanded_quant <- 50*tanh(0.05*price_diff)+100  
 
   return(demanded_quant)
 }
