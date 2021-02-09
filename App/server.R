@@ -3,5 +3,5 @@
 library(shiny)
 
 function(input, output){
-  output$pers_price <- renderText({input$price})
+  output$pers_price <- renderText({input$pers_price})
 }

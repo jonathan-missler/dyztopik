@@ -4,7 +4,7 @@ library(shiny)
 
 fluidPage(
   numericInput(
-  inputId = 'price',
+  inputId = 'pers_price',
   label = 'Enter your price',
   value = '0'
   ),

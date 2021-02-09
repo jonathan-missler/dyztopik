@@ -1,7 +1,7 @@
 
 
 price <- function(current_price = 336){
-  new_price <- current_price + rcauchy(n = 1, scale = 100, location = 0)
+  new_price <- current_price + rcauchy(n = 1, scale = 25, location = 0)
   
   if(new_price < 0){
     new_price <- 17
@@ -23,8 +23,8 @@ worker_happiness <- function(wages, infra){
 
 
 
-yield <- function(n_workers, tech){
-  quantity <- log(n_workers^2) * log(tech^2) + rnorm(n = 1, mean = 0, sd = 15)
+yield <- function(n_workers, tech, worker_hap){
+  quantity <- log(n_workers^2) * log(tech^2) * sqrt(30 *worker_hap)  + rnorm(n = 1, mean = 0, sd = 15)
   return(quantity)
 }
 
